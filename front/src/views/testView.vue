@@ -67,7 +67,7 @@
             <div>
                 <!-- 上傳照片元素 -->
                 <h4>點選圖片上傳</h4>
-                <Uploader server="http://localhost:8081/api/upload" @change="changeMedia" />
+                <Uploader server="http://localhost:8081/api/cropper/upload" @change="changeMedia" />
             </div>
 
 
@@ -302,7 +302,7 @@ export default {
             gogo().then(() => {
                 // console.log('最後紀錄的 datalist:', dataList.length)
                 // console.log('res goog:', this.dataList)
-                axios.post("http://localhost:8081/api/model_detect_th",
+                axios.post("http://localhost:8081/api/cropper/model_detect_th",
                     { 'images': this.dataList },
                     { headers: { 'Content-Type': 'application/json' } }
                 ).then((result) => {
